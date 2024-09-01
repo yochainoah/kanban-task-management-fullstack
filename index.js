@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import taskRouter from "./routes/taskRoutes.js";
 import boardRouter from "./routes/boardRoutes.js";
 import cors from "cors";
+import userRouter from "./routes/userRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -19,7 +20,7 @@ app.use(cors()); // allows requests from anywhere
 
 app.options("*", cors());
 app.use(taskRouter);
-
+app.use(userRouter);
 app.use(boardRouter);
 
 app.get("/", (req, res) => {

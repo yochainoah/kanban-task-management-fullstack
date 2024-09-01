@@ -3,7 +3,7 @@ import { model, Schema } from "mongoose";
 const subTaskSchema = new Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   isCompleted: {
     type: Boolean,
