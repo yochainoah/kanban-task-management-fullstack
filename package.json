@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "build": "npm install --prefix ./client && npm run buid --prefix ./client && npm install",
     "dev": "nodemon index.js",
     "prod": "NODE_ENV=production nodemon server.js"
   },
