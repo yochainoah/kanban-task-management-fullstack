@@ -5,12 +5,18 @@ import taskRouter from "./routes/taskRoutes.js";
 import boardRouter from "./routes/boardRoutes.js";
 import cors from "cors";
 import userRouter from "./routes/userRoutes.js";
+import path from "path";
+
+
 
 dotenv.config();
 const app = express();
 // automatically parse incoming json
 mongoose.set("strictPopulate", false);
+
+app.use(express.static(path.join(__dirname, "build")));
 app.use(express.json());
+
 app.use(cors()); // allows requests from anywhere
 // app.use(
 //   cors({
