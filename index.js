@@ -39,7 +39,7 @@ async function connect() {
     console.log(process.env.DB);
     await mongoose.connect(process.env.DB);
     console.log("App connected to database");
-    app.listen(process.env.PORT, () => {
+    app.listen(() => {
       console.log(`Now listening on port:${process.env.PORT}`);
     });
   } catch (err) {
