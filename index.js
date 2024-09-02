@@ -6,13 +6,15 @@ import boardRouter from "./routes/boardRoutes.js";
 import cors from "cors";
 import userRouter from "./routes/userRoutes.js";
 import path from "path";
-
-
+import { fileURLToPath } from "url";
 
 dotenv.config();
 const app = express();
 // automatically parse incoming json
 mongoose.set("strictPopulate", false);
+// Get the __filename and __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, "build")));
 app.use(express.json());
